@@ -5,6 +5,7 @@ import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import axios from 'axios'
+import StockChart from './StockChart';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -63,28 +64,36 @@ function App() {
   return (
     <>
       <div className="App">
-        <div style={{ position: "relative", height: "600px", width: "700px" }}>
-          <MainContainer>
-            <ChatContainer>
-              <MessageList
-                scrollBehavior="smooth"
-                typingIndicator={isTyping ? <TypingIndicator content="SAFT-GPT is typing" /> : null}
-              >
-                {messages.map((message, i) => {
-                  console.log(message)
-                  return <Message key={i} model={message} />
-                })}
-              </MessageList>
-              <MessageInput className="messageStyle" placeholder="Send a message" onSend={handleSend}
-                attachButton="false" />
-            </ChatContainer>
-          </MainContainer>
-        </div>
+
+
+          <div className='charts'>
+            <StockChart />
+          </div>
+          <div className='chat'>
+            <div style={{height: "600px", width: "700px" }}>
+              <MainContainer>
+                <ChatContainer>
+                  <MessageList
+                    scrollBehavior="smooth"
+                    typingIndicator={isTyping ? <TypingIndicator content="SAFT-GPT is typing" /> : null}
+                  >
+                    {messages.map((message, i) => {
+                      console.log(message)
+                      return <Message key={i} model={message} />
+                    })}
+                  </MessageList>
+                  <MessageInput className="messageStyle" placeholder="Send a message" onSend={handleSend}
+                    attachButton="false" />
+                </ChatContainer>
+              </MainContainer>
+            </div>
+          </div>
+
+
       </div>
     </>
   )
 }
 
 export default App
-
 

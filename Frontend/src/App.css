@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.charts {
+  display: flex;
+  justify-content: flex-start; /* Align components to the left */
+}
+
+.chat{
+  display: flex;
+  justify-content: flex-end; /* Align components to the left */
+}
