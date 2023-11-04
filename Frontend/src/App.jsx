@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,8 +32,28 @@ function App() {
     // Initial system message to determine ChatGPT functionality
     // How it responds, how it talks, etc.
     setIsTyping(true);
-    await processMessageToChatGPT(newMessages);
+    await processMessageToChatGPT(message);
   };
+
+  async function processMessageToChatGPT(message) {
+    axios.post('/mailtemplate', {
+      'text': this.getters['mailtemplate/getEditor'],
+      'subject': this.getters['mailtemplate/getSubject']
+    })
+      .then(response => {
+        $q.notify({
+          color: 'dark',
+          message: 'Mail template opgeslagen',
+          position: 'top',
+          timeout: 1000,
+        })
+
+        logger.debug(response.data)
+
+      }).catch(err => {
+        logger.error(err)
+      })
+  }
 
   const messageStyle = {
     backgroundColor: 'darkred',
@@ -42,12 +63,12 @@ function App() {
   return (
     <>
       <div className="App">
-        <div style={{ position: "relative", height: "800px", width: "700px" }}>
+        <div style={{ position: "relative", height: "600px", width: "700px" }}>
           <MainContainer>
             <ChatContainer>
               <MessageList
                 scrollBehavior="smooth"
-                typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+                typingIndicator={isTyping ? <TypingIndicator content="SAFT-GPT is typing" /> : null}
               >
                 {messages.map((message, i) => {
                   console.log(message)
@@ -55,7 +76,7 @@ function App() {
                 })}
               </MessageList>
               <MessageInput className="messageStyle" placeholder="Send a message" onSend={handleSend}
-                attachButton="false" />	
+                attachButton="false" />
             </ChatContainer>
           </MainContainer>
         </div>
