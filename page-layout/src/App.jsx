@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-// import '../style.css'
+import './style.css'
 // import '../style2.css'
 
 function App() {
@@ -11,11 +11,21 @@ function App() {
   return (
     <>
       <div class="container">
-        <div class="item item-1"></div>
-        <div class="item item-2"></div>
-        <div class="item item-3"></div>
-        <div class="item item-4"></div>
-        <div class="item item-5"></div>
+        <div class="item title">
+          <p>Sentiment Analysis for Trading</p>
+        </div>
+        <div class="item chat">
+          <p>Chat</p>
+        </div>
+        <div class="item tesla">
+          <p>Tesla</p>
+        </div>
+        <div class="item apple">
+          <p>Apple</p>
+        </div>
+        <div class="item google">
+          <p>Google</p>
+        </div>
       </div>
     </>
   )

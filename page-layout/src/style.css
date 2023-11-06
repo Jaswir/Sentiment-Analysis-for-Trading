@@ -5,31 +5,31 @@
 }
 
 /* Tesla*/
-.item-1 {
+.tesla {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
 /* Apple */
-.item-4 {
+.apple {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
 /* Google */
-.item-5 {
+.google {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
 }
 
 /* Chat */
-.item-2 {
+.chat {
   grid-column: 2 / 3;
   grid-row: 2 / 5;
 }
 
 /* Title */
-.item-3 {
+.title {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
 }

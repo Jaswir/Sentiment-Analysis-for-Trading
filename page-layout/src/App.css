@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-#root{
+#root, html, body{
   height: 100%;
   margin: 0;
   padding: 0;
@@ -24,8 +24,8 @@
 
 .item {
   padding: 0.5em;
-  background-color: #fb7185;
   font-weight: 700;
+  background-color: #fb7185;
   color: var(--clr-light);
   border: 10px solid var(--clr-accent);
 }
