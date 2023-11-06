@@ -1,22 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import ChatComponent from './ChatComponent'
+
 import './App.css'
 import './style.css'
-import ChatComponent from './ChatComponent'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    
-      <div class="container">
-        <div class="item title">
-          <p>Sentiment Analysis for Trading</p>
+      <div class="container ">
+
+        <div class="item title flex items-center justify-center">
+          <h1 class="text-center mb-4 text-3xl font-extrabold text-gray-900 
+        dark:text-black md:text-5xl lg:text-6xl">Sentiment Analysis for Trading</h1>
         </div>
         <div class="item chat">
-          <ChatComponent/>
+          <ChatComponent />
         </div>
         <div class="item tesla">
           <p>Tesla</p>
