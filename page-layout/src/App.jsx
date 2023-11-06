@@ -3,19 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import './style.css'
-// import '../style2.css'
+import ChatComponent from './ChatComponent'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    
       <div class="container">
         <div class="item title">
           <p>Sentiment Analysis for Trading</p>
         </div>
         <div class="item chat">
-          <p>Chat</p>
+          <ChatComponent/>
         </div>
         <div class="item tesla">
           <p>Tesla</p>
