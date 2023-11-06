@@ -72,7 +72,7 @@ function ChatComponent() {
                             })}
                         </MessageList>
                         <MessageInput className="messageStyle" placeholder="Send a message" onSend={handleSend}
-                            attachButton="false" />
+                            attachButton={false} />
                     </ChatContainer>
                 </MainContainer>
             </div>
