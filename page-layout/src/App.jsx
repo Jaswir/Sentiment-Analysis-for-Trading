@@ -5,6 +5,7 @@ import logo from './assets/trade_pro.svg'
 import './App.css'
 import './style.css'
 import axios from 'axios'
+import StockComponent from './StockComponent'
 
 function App() {
   const [curPrice, setCurPrice] = useState(218.75)
@@ -38,51 +39,25 @@ function App() {
       <div className="container dark:bg-slate-800">
 
         <div className="item title flex items-center justify-center">
-        {/* <img src={logo} className="" alt="Trade Pro Logo" /> */}
+          {/* <img src={logo} className="" alt="Trade Pro Logo" /> */}
           <h1 className="text-center mb-4 text-3xl font-extrabold text-gray-900 
         dark:text-white md:text-5xl lg:text-6xl">
-          Sentiment Analysis for Trading</h1>
-          
+            Sentiment Analysis for Trading</h1>
+
         </div>
         <div className="item chat">
           <ChatComponent />
         </div>
-        <div className="item tesla flex justify-center items-center ">
-          <p className="text-3xl 
-           text-gray-900 dark:text-white 
-           ">
-            Tesla, Inc.</p>
-          <div className="219.27 USD row-span-2">
-            <p className="text-3xl 
-           text-gray-900 dark:text-white 
-            ">
-              {curPrice}
-            </p>
-            <p className="text-3xl 
-           text-gray-900 dark:text-gray-500 
-           ">
-              USD
-            </p>
-          </div>
 
-
-
-
-          <p className="text-2xl 
-           text-gray-900 dark:text-red-500">
-            -0.69 (0.31%) Today
-          </p>
+        <div className="item tesla">
+          <StockComponent companyName="Tesla, Inc." curPrice={222.18} d={2.91} dp={1.33}/>
         </div>
-
-
-
-
 
         <div className="item apple">
-         
+          <StockComponent companyName="Apple" curPrice={181.82} d={2.59} dp={1.45}/>
         </div>
-        <div className="item google">
-          <p>Google</p>
+        <div className="item meta">
+          <StockComponent companyName="Meta" curPrice={318.82} d={-2.91} dp={-1.5}/>
         </div>
       </div>
     </>

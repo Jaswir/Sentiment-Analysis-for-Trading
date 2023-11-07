@@ -16,8 +16,8 @@
   grid-row: 3 / 4;
 }
 
-/* Google */
-.google {
+/* Meta */
+.meta {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
 }
