@@ -37,7 +37,7 @@ function StockComponent({ companyName, symbol }) {
         getStockPrice()
 
         console.log("triggered")
-        const callsPerMinute = 12;
+        const callsPerMinute = 1;
         const interval = 60 * 1000 / callsPerMinute;
         const intervalId = setInterval(getStockPrice, interval);
 
@@ -59,7 +59,7 @@ function StockComponent({ companyName, symbol }) {
     return (
         <>
 
-            <div className="w-64 p-4 border border-gray-300 rounded-lg">
+            <div className="w-48 p-4 border border-gray-300 rounded-lg">
                 <h1 className="text-xl font-semibold">{companyName}</h1>
                 <p className="text-3xl font-bold mt-2">{curPrice}
                     <span className="text-usd-size text-gray-400"> USD</span>

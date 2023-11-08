@@ -8,6 +8,9 @@ export default {
       fontSize: {
         'usd-size': '0.95rem', // Adjust the size as needed
       },
+      colors: {
+        'saft': '#314059',
+      },
     },
   },
   plugins: [],

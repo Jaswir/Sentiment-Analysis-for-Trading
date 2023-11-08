@@ -7,17 +7,16 @@ import axios from 'axios'
 
 function ChatComponent() {
 
-    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    const apiKey = import.meta.env.VITE_VECTARA_API_KEY;
+    const customerID = import.meta.env.VITE_VECTARA_CUSTOMER_ID
 
-    console.log('API KEY: ' + apiKey)
-    
     const [isTyping, setIsTyping] = useState(false);
 
     const [messages, setMessages] = useState([
         {
-          message: "Hello, I'm your Trading Assistant! How can i help you?",
-          direction: 'incoming',
-          sender: "TradePro"
+            message: "Hello, I'm your Trading Assistant! How can i help you?",
+            direction: 'incoming',
+            sender: "TradePro"
         }
     ]);
 
@@ -39,24 +38,74 @@ function ChatComponent() {
         });
     };
 
-    async function processMessageToChatGPT(message) 
-    {
-        const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` };
-        const payload = {
-            model: "gpt-3.5-turbo",
-            messages: [{"role": "user", "content": message }],
-            temperature: 0.7
+    async function processMessageToChatGPT(message) {
+        let data = JSON.stringify({
+            "query": [
+                {
+                    "query": `${message}`,
+                    "start": 0,
+                    "numResults": 1,
+                    "contextConfig": {
+                        "charsBefore": 30,
+                        "charsAfter": 30,
+                        "sentencesBefore": 3,
+                        "sentencesAfter": 3,
+                        "startTag": "<b>",
+                        "endTag": "</b>"
+                    },
+                    "corpusKey": [
+                        {
+                            "customerId": `${customerID}`,
+                            "corpusId": 3,
+                            "semantics": "DEFAULT",
+                            "dim": [
+                                {
+                                    "name": "string",
+                                    "weight": 0
+                                }
+                            ],
+                            "metadataFilter": "part.lang = 'eng'",
+                            "lexicalInterpolationConfig": {
+                                "lambda": 0
+                            }
+                        }
+                    ],
+                    "rerankingConfig": {
+                        "rerankerId": 272725717
+                    },
+                    "summary": [
+                        {
+                            "summarizerPromptName": "string",
+                            "maxSummarizedResults": 0,
+                            "responseLang": "string"
+                        }
+                    ]
+                }
+            ]
+        });
+
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'https://api.vectara.io/v1/query',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'customer-id': '3044609865',
+                'x-api-key': 'zwt_tXkPSbQ6T5QCFbKJZx8quK_WZ3nerJ-zFknzsw'
+            },
+            data: data
         };
 
-        try
-        {
-            const response = await axios.post('https://api.openai.com/v1/chat/completions', payload, { headers });
-            return response.data.choices[0].message.content.trim();
-        }
-        catch(error)
-        {
-            return error.message;
-        }
+        return axios(config)
+            .then((response) => {
+                let r = response.data.responseSet[0].response[0].text;
+                return response.data.responseSet[0].response[0].text.trim();
+
+            })
+            .catch((error) => {
+                return error.message
+            });
     }
 
     return (
