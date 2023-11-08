@@ -5,7 +5,7 @@ import axios from 'axios'
 
 function StockComponent({companyName, curPrice, d, dp}) {
     
-    let color = dp < 0 ? 'text-green-500': 'text-red-500'
+    let color = dp > 0 ? 'text-green-500': 'text-red-500'
     return (
         <>
             

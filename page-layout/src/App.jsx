@@ -39,7 +39,7 @@ function App() {
       <div className="container dark:bg-slate-800">
 
         <div className="item title flex items-center justify-center">
-          <img class="object-cover h-48 w-96" src={logo}
+          <img class="object-cover  h-48 w-96" src={logo}
             alt="image description" />
           <h1 className="text-center mb-4 text-3xl font-extrabold text-gray-900 
         dark:text-white md:text-5xl lg:text-6xl">
