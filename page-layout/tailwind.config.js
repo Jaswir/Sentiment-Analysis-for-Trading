@@ -9,7 +9,8 @@ export default {
         'usd-size': '0.95rem', // Adjust the size as needed
       },
       colors: {
-        'saft': '#314059',
+        'saft': '#445e88', 
+        'saft-hover': '#1e293b',
       },
     },
   },

@@ -37,7 +37,7 @@ function StockComponent({ companyName, symbol }) {
         getStockPrice()
 
         console.log("triggered")
-        const callsPerMinute = 1;
+        const callsPerMinute = 10;
         const interval = 60 * 1000 / callsPerMinute;
         const intervalId = setInterval(getStockPrice, interval);
 
