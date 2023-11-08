@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import axios from 'axios'
-
+import StockComponent from './StockComponent'
 
 
 function ChatComponent() {
@@ -19,6 +19,12 @@ function ChatComponent() {
             sender: "TradePro"
         }
     ]);
+
+    const handleClick = (event) => {
+
+        const buttonText = event.target.innerText;
+        handleSend(buttonText);
+    };
 
     const handleSend = async (message) => {
         setMessages(oldMessages => [...oldMessages, {
@@ -110,7 +116,7 @@ function ChatComponent() {
 
     return (
         <>
-            <div style={{ height: "100%", width: "100%" }}>
+            <div className="item chat" style={{ height: "100%", width: "100%" }}>
                 <MainContainer>
                     <ChatContainer>
                         <MessageList
@@ -125,6 +131,33 @@ function ChatComponent() {
                             attachButton={false} />
                     </ChatContainer>
                 </MainContainer>
+            </div>
+
+            <div className="item tesla flex p-5 items-center">
+                <StockComponent companyName="Tesla, Inc." symbol="TSLA" />
+                <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
+            border border-gray-300 rounded-lg mr-auto ml-20"
+                    onClick={handleClick}>
+                    Should I invest in Tesla?
+                </button>
+            </div>
+
+            <div className="item apple flex p-5 items-center">
+                <StockComponent companyName="Apple" symbol="AAPL" />
+                <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
+            border border-gray-300 rounded-lg mr-auto ml-20"
+                    onClick={handleClick}>
+                    Should I invest in Apple?
+                </button>
+
+            </div>
+            <div className="item meta flex p-5 items-center">
+                <StockComponent companyName="Meta" symbol="META" />
+                <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
+            border border-gray-300 rounded-lg mr-auto ml-20"
+                    onClick={handleClick}>
+                    Should I invest in Meta?
+                </button>
             </div>
         </>
     )

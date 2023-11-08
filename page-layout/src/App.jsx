@@ -21,34 +21,9 @@ function App() {
             </p>
           </div>
         </div>
+        
+        <ChatComponent />
 
-
-        <div className="item chat">
-          <ChatComponent />
-        </div>
-        <div className="item tesla flex p-5 items-center">
-          <StockComponent companyName="Tesla, Inc." symbol="TSLA" />
-          <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
-            border border-gray-300 rounded-lg mr-auto ml-20">
-            Should I invest in Tesla?
-          </button>
-        </div>
-
-        <div className="item apple flex p-5 items-center">
-          <StockComponent companyName="Apple" symbol="AAPL" />
-          <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
-            border border-gray-300 rounded-lg mr-auto ml-20">
-            Should I invest in Apple?
-          </button>
-
-        </div>
-        <div className="item meta flex p-5 items-center">
-          <StockComponent companyName="Meta" symbol="META" />
-          <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
-            border border-gray-300 rounded-lg mr-auto ml-20">
-            Should I invest in Meta?
-          </button>
-        </div>
       </div>
     </>
   )
