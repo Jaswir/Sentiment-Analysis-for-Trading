@@ -8,13 +8,13 @@ function StockComponent({companyName, curPrice, d, dp}) {
     let color = dp < 0 ? 'text-green-500': 'text-red-500'
     return (
         <>
-
-            <div class="w-64 p-4 border border-gray-300 rounded-lg">
-                <h1 class="text-xl font-semibold">{companyName}</h1>
-                <p class="text-3xl font-bold mt-2">{curPrice}
-                    <span class="text-usd-size text-gray-400"> USD</span>
+            
+            <div className="w-64 p-4 border border-gray-300 rounded-lg">
+                <h1 className="text-xl font-semibold">{companyName}</h1>
+                <p className="text-3xl font-bold mt-2">{curPrice}
+                    <span className="text-usd-size text-gray-400"> USD</span>
                 </p>
-                <p class={`text-sm ${color}`}>{d} ({dp}%) Today</p>
+                <p className={`text-sm ${color}`}>{d} ({dp}%) Today</p>
             </div>
 
         </>

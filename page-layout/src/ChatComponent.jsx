@@ -3,6 +3,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import axios from 'axios'
 
+
 function ChatComponent() {
     const [count, setCount] = useState(0)
     const [isTyping, setIsTyping] = useState(false);
@@ -52,11 +53,6 @@ function ChatComponent() {
             })
     }
 
-    const messageStyle = {
-        backgroundColor: 'darkred',
-        color: 'darksalmon',
-    };
-
     return (
         <>
             <div style={{ height: "100%", width: "100%" }}>
@@ -71,7 +67,7 @@ function ChatComponent() {
                                 return <Message key={i} model={message} />
                             })}
                         </MessageList>
-                        <MessageInput className="messageStyle" placeholder="Send a message" onSend={handleSend}
+                        <MessageInput className=".cs-message-input" placeholder="Send a message" onSend={handleSend}
                             attachButton={false} />
                     </ChatContainer>
                 </MainContainer>
@@ -79,6 +75,7 @@ function ChatComponent() {
         </>
     )
 }
+
 
 export default ChatComponent
 
