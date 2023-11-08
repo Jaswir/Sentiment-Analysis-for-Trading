@@ -133,7 +133,7 @@ function ChatComponent() {
                 </MainContainer>
             </div>
 
-            <div className="item tesla flex p-5 items-center">
+            <div className="item tesla flex p-5 items-end">
                 <StockComponent companyName="Tesla, Inc." symbol="TSLA" />
                 <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
             border border-gray-300 rounded-lg mr-auto ml-20"
@@ -145,13 +145,13 @@ function ChatComponent() {
             <div className="item apple flex p-5 items-center">
                 <StockComponent companyName="Apple" symbol="AAPL" />
                 <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
-            border border-gray-300 rounded-lg mr-auto ml-20"
+            border border-gray-300 rounded-lg ml-auto mr-10"
                     onClick={handleClick}>
                     Should I invest in Apple?
                 </button>
 
             </div>
-            <div className="item meta flex p-5 items-center">
+            <div className="item meta flex p-5 ">
                 <StockComponent companyName="Meta" symbol="META" />
                 <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
             border border-gray-300 rounded-lg mr-auto ml-20"
