@@ -3,9 +3,13 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import axios from 'axios'
 
-const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
 
 function ChatComponent() {
+
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
+    console.log('API KEY: ' + apiKey)
     
     const [isTyping, setIsTyping] = useState(false);
 
