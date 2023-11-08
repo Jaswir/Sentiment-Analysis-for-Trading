@@ -37,12 +37,10 @@
 /* Chat Component, Dark Theme */
 .cs-chat-container .cs-message-list {
   background-color: rgb(49 64 89);
-  /* Other styles here */
 }
 
 .cs-chat-container .cs-message-input {
   background-color: rgb(18 28 44);
-  /* Other styles here */
 }
 
 .cs-message__content .cs-message__html-content {
