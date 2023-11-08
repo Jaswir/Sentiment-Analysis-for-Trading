@@ -12,7 +12,9 @@
   "dependencies": {
     "@chatscope/chat-ui-kit-react": "^1.10.1",
     "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
     "finnhub": "^1.2.18",
+    "openai": "^4.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
