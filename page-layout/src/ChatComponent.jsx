@@ -116,7 +116,7 @@ function ChatComponent() {
 
     return (
         <>
-            <div className="item chat" style={{ height: "100%", width: "100%" }}>
+            <div className="item chat " style={{ height: "100%", width: "100%" }}>
                 <MainContainer>
                     <ChatContainer>
                         <MessageList
@@ -147,7 +147,7 @@ function ChatComponent() {
                 <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
             border border-gray-300 rounded-lg ml-auto mr-10"
                     onClick={handleClick}>
-                    Should I invest in Apple?
+                   Give me some news on Apple right now!
                 </button>
 
             </div>
@@ -156,7 +156,7 @@ function ChatComponent() {
                 <button class="w-48 h-16 p-5 bg-saft hover:bg-saft-hover text-white font-bold py-2 px-4 
             border border-gray-300 rounded-lg mr-auto ml-20"
                     onClick={handleClick}>
-                    Should I invest in Meta?
+                    What is Meta's financial state?
                 </button>
             </div>
         </>

@@ -13,15 +13,17 @@ function App() {
     <>
       <div className="container dark:bg-slate-800">
 
-        <div className="item title flex items-center justify-start">
-          <img className="object-cover h-48 w-48 md:w-72 lg:w-96" src={logo} alt="image description" />
-          <div className="text-center mr-15">
-            <p className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-              Sentiment Analysis for Trading
-            </p>
-          </div>
+        <div className="item title flex items-center">
+
+          <img className="object-none h-48 w-48 md:w-72 lg:w-48" src={logo} alt="image description" />
+          <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            Trade Pro:
+            <span className="p-5 text-3xl md:text-4xl lg:text-5xl"> Sentiment Analysis Tool for Trading</span>
+          </h1>
+
+
         </div>
-        
+
         <ChatComponent />
 
       </div>
