@@ -21,13 +21,7 @@ function StockComponent({ companyName, symbol }) {
                 let c = response.data.c.toFixed(2)
                 let d = response.data.d.toFixed(2)
                 let dp = response.data.dp.toFixed(2)
-
-                if (symbol == "TSLA"){
-                    c = 214.54
-                    d = -7.67
-                    dp = -3.45
-                }
-
+                
                 setCurPrice((c))
                 setDeltaPrice((d))
                 setDeltaPercentage((dp))
